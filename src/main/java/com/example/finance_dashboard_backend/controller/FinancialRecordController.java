@@ -1,5 +1,7 @@
 package com.example.finance_dashboard_backend.controller;
 
+import com.example.finance_dashboard_backend.dto.record.CreateFinancialRecordRequest;
+import com.example.finance_dashboard_backend.dto.record.FinancialRecordResponse;
 import com.example.finance_dashboard_backend.model.FinancialRecord;
 import com.example.finance_dashboard_backend.service.FinancialRecordService;
 import lombok.RequiredArgsConstructor;
@@ -16,13 +18,13 @@ public class FinancialRecordController {
 
     // CREATE RECORD
     @PostMapping
-    public FinancialRecord createRecord(@RequestBody FinancialRecord record) {
-        return recordService.createRecord(record);
+    public FinancialRecordResponse createRecord(@RequestBody CreateFinancialRecordRequest request) {
+        return recordService.createRecord(request);
     }
 
     // GET ALL RECORDS
     @GetMapping
-    public List<FinancialRecord> getAllRecords() {
+    public List<FinancialRecordResponse> getAllRecords() {
         return recordService.getAllRecords();
     }
 
