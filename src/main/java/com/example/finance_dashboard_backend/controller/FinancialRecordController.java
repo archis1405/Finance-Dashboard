@@ -4,6 +4,7 @@ import com.example.finance_dashboard_backend.dto.record.CreateFinancialRecordReq
 import com.example.finance_dashboard_backend.dto.record.FinancialRecordResponse;
 import com.example.finance_dashboard_backend.model.FinancialRecord;
 import com.example.finance_dashboard_backend.service.FinancialRecordService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,7 @@ public class FinancialRecordController {
 
     // CREATE RECORD
     @PostMapping
-    public FinancialRecordResponse createRecord(@RequestBody CreateFinancialRecordRequest request) {
+    public FinancialRecordResponse createRecord(@RequestBody @Valid CreateFinancialRecordRequest request) {
         return recordService.createRecord(request);
     }
 
