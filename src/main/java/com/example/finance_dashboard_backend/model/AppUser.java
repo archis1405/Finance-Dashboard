@@ -36,6 +36,14 @@ public class AppUser {
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 20)
+    private UserStatus status;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "business_unit_id", nullable = false)
+    private BuisnessUnit businessUnit;
+
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
 
