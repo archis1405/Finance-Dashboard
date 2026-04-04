@@ -7,6 +7,7 @@ import com.example.finance_dashboard_backend.model.UserStatus;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import com.example.finance_dashboard_backend.model.RoleType;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
