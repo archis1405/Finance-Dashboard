@@ -23,7 +23,6 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class UserService {
     private final AppUserRepository userRepository;
-    private final AppUserRepository userRepository;
     private final RoleRepository roleRepository;
     private final BusinessUnitRepository businessUnitRepository;
     private final PasswordEncoder passwordEncoder;

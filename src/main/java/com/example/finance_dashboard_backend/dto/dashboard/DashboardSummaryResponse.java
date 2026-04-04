@@ -1,5 +1,7 @@
 package com.example.finance_dashboard_backend.dto.dashboard;
 
+import com.example.finance_dashboard_backend.dto.record.FinancialRecordResponse;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;

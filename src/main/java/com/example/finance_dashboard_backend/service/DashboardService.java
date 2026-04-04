@@ -2,6 +2,8 @@ package com.example.finance_dashboard_backend.service;
 
 import com.example.finance_dashboard_backend.dto.dashboard.CategoryTotalResponse;
 import com.example.finance_dashboard_backend.dto.dashboard.DashboardSummaryResponse;
+import com.example.finance_dashboard_backend.dto.dashboard.TrendPointResponse;
+import com.example.finance_dashboard_backend.dto.record.FinancialRecordResponse;
 import com.example.finance_dashboard_backend.exception.BadRequestException;
 import com.example.finance_dashboard_backend.model.BusinessUnit;
 import com.example.finance_dashboard_backend.model.FinancialRecord;
@@ -18,15 +20,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.time.YearMonth;
+import java.util.*;
 
 @Service
 @RequiredArgsConstructor
 public class DashboardService {
 
     private final FinancialRecordRepository financialRecordRepository;
+    private final FinancialRecordService financialRecordService;
+    private final UserService userService;
 
     @Transactional(readOnly = true)
     @Cacheable(value = "dashboard-summary", key = "T(java.lang.String).valueOf(#actor.username).concat(':').concat(T(java.lang.String).valueOf(#startDate)).concat(':').concat(T(java.lang.String).valueOf(#endDate))")
