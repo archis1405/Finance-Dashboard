@@ -42,7 +42,7 @@ public class AppUser {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "business_unit_id", nullable = false)
-    private BuisnessUnit businessUnit;
+    private BusinessUnit businessUnit;
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;

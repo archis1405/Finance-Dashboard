@@ -1,7 +1,16 @@
 package com.example.finance_dashboard_backend.dto.dashboard;
 
-public class DashboardSummaryResponse {
-    public Double totalIncome;
-    public Double totalExpense;
-    public Double netBalance;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+
+public record DashboardSummaryResponse(String businessUnitCode,
+                                       LocalDate startDate,
+                                       LocalDate endDate,
+                                       BigDecimal totalIncome,
+                                       BigDecimal totalExpense,
+                                       BigDecimal netBalance,
+                                       long totalRecords,
+                                       List<CategoryTotalResponse> categoryTotals,
+                                       List<FinancialRecordResponse> recentActivity) {
 }

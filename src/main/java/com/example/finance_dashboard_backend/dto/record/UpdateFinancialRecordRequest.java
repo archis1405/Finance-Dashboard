@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record CreateFinancialRecordRequest(@NotNull @DecimalMin(value = "0.01") BigDecimal amount,
+public record UpdateFinancialRecordRequest(@NotNull @DecimalMin(value = "0.01") BigDecimal amount,
                                            @NotNull RecordType type,
                                            @NotBlank @Size(max = 80) String category,
                                            @NotNull LocalDate entryDate,
